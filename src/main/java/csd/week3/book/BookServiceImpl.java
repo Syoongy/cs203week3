@@ -59,7 +59,12 @@ public class BookServiceImpl implements BookService {
      */
     @Override
     public Book deleteBook(Long id){
-        // your code here
+        for(Book book : books){
+            if(book.getId().equals(id)){
+                books.remove(book);
+                return book;
+            }
+        }
         return null;
     }
 }
